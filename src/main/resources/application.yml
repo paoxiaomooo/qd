@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/homework
+    username: root
+    password: 1234
+  mybatis-plus:
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #
+      map-underscore-to-camel-case: true
+    mapper-locations: classpath:/mapper/*.xml  # 确保如果有 XML 映射文件的话，这里是有效
+
+
+#redis:
+#  host: 127.0.0.1
+#  port: 6379
+#  password: # redis 密码，如果没有设置密码，应该为空
+#  timeout: 10000
+#  database: 1
+#  lettuce:
+#    pool:
+#      min-idle: 0
+#      max-idle: 5
+#      max-active: 40
+#      max-wait: 5000
+#      time-between-eviction-runs: 30000
+#  shutdown-timeout: 5000
+
+sa-token:
+  token-name: satoken
+  timeout: 2592000
+  active-timeout: -1
+  allow-concurrent-login: false
+  is-share: false
+  token-style: uuid
